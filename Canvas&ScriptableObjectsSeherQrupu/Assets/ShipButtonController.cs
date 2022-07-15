@@ -10,6 +10,10 @@ public class ShipButtonController : MonoBehaviour
 
    [SerializeField] private Text shipPriceText;
 
+	 [SerializeField] private Button buyOrSelectButton;
+
+	 [SerializeField] private Text buyOrSelectButtonText;
+
 	 [SerializeField] ShopItemSO shipData;
 
 
@@ -23,5 +27,41 @@ public class ShipButtonController : MonoBehaviour
 	 public void SetShipData(ShopItemSO _shipData)
 	 {
 			shipData = _shipData;
+	 }
+
+	 public void BuyOrSelectShip()
+	 {
+
+			if (shipData.GetIsBuy())
+			{
+				 if (!shipData.GetIsSelect())
+				 {
+						SelectItem();
+				 }
+			}
+			else
+			{
+				 //Currency check
+
+				 shipData.BuyItem();
+
+				 shipData.SelectItem();
+			}
+	 }
+
+	 private void SelectItem()
+	 {
+			shipData.SelectItem();
+			buyOrSelectButton.interactable = false;
+			buyOrSelectButtonText.text = "Selected";
+	 }
+
+	 public void DeselectItem()
+	 {
+			shipData.DeselectItem();
+
+			buyOrSelectButton.interactable = true;
+
+			buyOrSelectButtonText.text = "Select";
 	 }
 }

@@ -20,6 +20,10 @@ public class ShopItemSO : ScriptableObject
 
    [SerializeField] private float itemHealth;
 
+   [SerializeField] private bool isBuy;
+
+   [SerializeField] private bool isSelect;
+
    public Sprite ReturnItemSprite()
 	 {
       return itemSprite;
@@ -33,5 +37,30 @@ public class ShopItemSO : ScriptableObject
    public int ReturnItemPrice()
 	 {
       return itemPrice;
+	 }
+
+   public void BuyItem()
+	 {
+      isBuy = true;
+	 }
+
+   public bool GetIsBuy()
+	 {
+      return isBuy;
+	 }
+
+   public void SelectItem()
+	 {
+      isSelect = true;
+	 }
+
+   public void DeselectItem()
+	 {
+      isSelect = false;
+	 }
+
+   public bool GetIsSelect()
+	 {
+      return isSelect;
 	 }
 }

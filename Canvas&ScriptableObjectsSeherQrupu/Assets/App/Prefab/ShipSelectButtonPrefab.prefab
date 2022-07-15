@@ -217,6 +217,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipIconImage: {fileID: 2309109794564524740}
   shipPriceText: {fileID: 2309109794048200198}
+  buyOrSelectButton: {fileID: 2309109794336509667}
+  buyOrSelectButtonText: {fileID: 2309109794876545747}
   shipData: {fileID: 0}
 --- !u!1 &2309109794336509665
 GameObject:
