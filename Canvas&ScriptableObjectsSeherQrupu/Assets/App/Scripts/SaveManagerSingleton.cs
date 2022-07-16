@@ -7,7 +7,13 @@ public class SaveManagerSingleton : MonoBehaviour
 {
    public static SaveManagerSingleton instance;
 
-   public SaveManager saveManager;
+	 public string shipsJsonFileName="defaultFile";
+
+	 public string playerJsonFileName = "playerData";
+
+	 public SaveManager saveManager;
+
+	 
 
 	 private void Awake()
 	 {

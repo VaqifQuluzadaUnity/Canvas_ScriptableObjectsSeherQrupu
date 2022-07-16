@@ -20,9 +20,7 @@ public class ShopItemSO : ScriptableObject
 
    [SerializeField] private float itemHealth;
 
-   [SerializeField] private bool isBuy;
-
-   [SerializeField] private bool isSelect;
+   public ShipState shipState;
 
    public Sprite ReturnItemSprite()
 	 {
@@ -41,26 +39,26 @@ public class ShopItemSO : ScriptableObject
 
    public void BuyItem()
 	 {
-      isBuy = true;
+      shipState.isBuy = true;
 	 }
 
    public bool GetIsBuy()
 	 {
-      return isBuy;
+      return shipState.isBuy;
 	 }
 
    public void SelectItem()
 	 {
-      isSelect = true;
+      shipState.isSelect = true;
 	 }
 
    public void DeselectItem()
 	 {
-      isSelect = false;
+      shipState.isSelect = false;
 	 }
 
    public bool GetIsSelect()
 	 {
-      return isSelect;
+      return shipState.isSelect;
 	 }
 }

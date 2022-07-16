@@ -17,3 +17,6 @@ MonoBehaviour:
   itemPrice: 500
   itemSpeed: 500
   itemHealth: 100
+  shipState:
+    isBuy: 0
+    isSelect: 0

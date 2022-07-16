@@ -22,13 +22,25 @@ public class ShipButtonController : MonoBehaviour
 			shipIconImage.sprite = shipData.ReturnItemSprite();
 
 			shipPriceText.text = shipData.ReturnItemPrice().ToString();
+
+			if (shipData.shipState.isBuy)
+			{
+				 if (shipData.shipState.isSelect)
+				 {
+						SelectItem();
+				 }
+				 else
+				 {
+						DeselectItem();
+				 }
+			}
 	 }
 
 	 public void SetShipData(ShopItemSO _shipData)
 	 {
 			shipData = _shipData;
 	 }
-
+	 //
 	 public void BuyOrSelectShip()
 	 {
 
@@ -45,12 +57,16 @@ public class ShipButtonController : MonoBehaviour
 
 				 shipData.BuyItem();
 
-				 shipData.SelectItem();
+				 SelectItem();
+
+				 
 			}
 	 }
 
 	 private void SelectItem()
 	 {
+			ShopMenuController.instance.SetCurrentSelectedShip(this);
+
 			shipData.SelectItem();
 			buyOrSelectButton.interactable = false;
 			buyOrSelectButtonText.text = "Selected";
